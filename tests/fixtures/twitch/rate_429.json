@@ -1,0 +1,11 @@
+{
+  "source": "https://dev.twitch.tv/docs/api/guidelines/#rate-limits",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (rate limits); body shape per Twitch error convention",
+  "status": 429,
+  "response": {
+    "error": "Too Many Requests",
+    "status": 429,
+    "message": "Rate limit exceeded"
+  }
+}

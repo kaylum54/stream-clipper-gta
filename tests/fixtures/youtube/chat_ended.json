@@ -1,0 +1,17 @@
+{
+  "source": "https://developers.google.com/youtube/v3/live/docs/liveChatMessages/list",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "kind": "youtube#liveChatMessageListResponse",
+    "nextPageToken": "TOKEN4",
+    "pollingIntervalMillis": 5000,
+    "offlineAt": "2026-11-16T13:00:00.000Z",
+    "pageInfo": {
+      "totalResults": 0,
+      "resultsPerPage": 0
+    },
+    "items": []
+  }
+}

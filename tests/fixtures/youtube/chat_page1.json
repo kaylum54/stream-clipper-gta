@@ -1,0 +1,35 @@
+{
+  "source": "https://developers.google.com/youtube/v3/live/docs/liveChatMessages/list",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (items shape per docs envelope)",
+  "status": 200,
+  "response": {
+    "kind": "youtube#liveChatMessageListResponse",
+    "nextPageToken": "TOKEN2",
+    "pollingIntervalMillis": 5000,
+    "pageInfo": {
+      "totalResults": 2,
+      "resultsPerPage": 2
+    },
+    "items": [
+      {
+        "kind": "youtube#liveChatMessage",
+        "id": "msg-1",
+        "snippet": {
+          "type": "textMessageEvent",
+          "publishedAt": "2026-11-16T11:59:00.000Z",
+          "displayMessage": "old message A"
+        }
+      },
+      {
+        "kind": "youtube#liveChatMessage",
+        "id": "msg-2",
+        "snippet": {
+          "type": "textMessageEvent",
+          "publishedAt": "2026-11-16T11:59:30.000Z",
+          "displayMessage": "old message B"
+        }
+      }
+    ]
+  }
+}

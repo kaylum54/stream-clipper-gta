@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "clipper-demo", "runtimeExecutable": ".venv/Scripts/python.exe", "runtimeArgs": ["e2e/demo.py"], "port": 8770 }
+  ]
+}

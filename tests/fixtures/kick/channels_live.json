@@ -1,0 +1,63 @@
+{
+  "source": "https://docs.kick.com/apis/channels",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (schema only; no example in docs)",
+  "status": 200,
+  "response": {
+    "message": "OK",
+    "data": [
+      {
+        "broadcaster_user_id": 123456,
+        "slug": "classybeef",
+        "stream_title": "Road to Rank 1 \ud83c\udfae",
+        "channel_description": "hi",
+        "banner_picture": "https://kick.com/b.png",
+        "category": {
+          "id": 15,
+          "name": "Grand Theft Auto V",
+          "thumbnail": "https://kick.com/c.png"
+        },
+        "stream": {
+          "is_live": true,
+          "is_mature": false,
+          "key": "",
+          "language": "en",
+          "start_time": "2026-11-16T10:00:00Z",
+          "thumbnail": "https://kick.com/t.png",
+          "url": "",
+          "viewer_count": 321,
+          "custom_tags": []
+        },
+        "active_subscribers_count": 1,
+        "active_gifted_subscribers_count": 0,
+        "canceled_subscribers_count": 0
+      },
+      {
+        "broadcaster_user_id": 123456,
+        "slug": "sleepy",
+        "stream_title": "Road to Rank 1 \ud83c\udfae",
+        "channel_description": "hi",
+        "banner_picture": "https://kick.com/b.png",
+        "category": {
+          "id": 15,
+          "name": "Grand Theft Auto V",
+          "thumbnail": "https://kick.com/c.png"
+        },
+        "stream": {
+          "is_live": false,
+          "is_mature": false,
+          "key": "",
+          "language": "en",
+          "start_time": "2026-11-16T10:00:00Z",
+          "thumbnail": "https://kick.com/t.png",
+          "url": "",
+          "viewer_count": 0,
+          "custom_tags": []
+        },
+        "active_subscribers_count": 1,
+        "active_gifted_subscribers_count": 0,
+        "canceled_subscribers_count": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+Here's how you can build a GTA clipping system
+two days before GTA drops.
+So it's. It's relatively easy as long as you've got a cloud account.
+First thing that you need to know
+is that each of the streaming platforms, kick,
+YouTube, Twitch,
+they've all got an API that you can call freely.
+And that API will expose when a streamer has gone live.
+So step No.
+1 is you need to tell Claude to build you a script for each platform
+and then give it a list of all of the streamers that you wanna track.
+Once you've got a list of all of the streamers that you wanna track,
+Claude build you the script
+and every couple of minutes
+it will call each of the APIs and then bring you back,
+basically a list of which one's live and which one isn't.
+So then you'll get notified as soon as the streamer goes live.
+Next thing you.
+You then build something with Claude that integrates Stream Link.
+Stream Link is compatible with Twitch,
+YouTube and kick. And as soon as a streamer goes live,
+Stream Link will then start recording each stream in 10 minute chunks.
+And then it will use AI sentiment analysis.
+Such as
+has. Has there been more laughter on the video?
+Has there been an increase in the. The.
+The chats activity? Has.
+Has there been certain emojis been put in?
+There's different sentiment analysis techniques that you can use
+which will then Give you different clips.
+So then once it notices something it will start clipping
+and then 35 to 45 seconds earlier
+it will also clip that in case there's a build up to it.
+Once you've got your clip it will then be pushed through.
+You can connect it into a discord.
+So then from your end what it will look like is
+you can get a notification from discord
+saying that the stream has just gone live.
+Like beginning to beginning to record the stream.
+From there it captures what it needs to capture,
+sends it through to you. You can watch it and then approve it.
+Once you press approve,
+the next bit that you'd have wired in is called post for me.
+Post for me is basically like a unified posting platform
+where you can just connect your accounts
+and then
+you can connect as many different social accounts as you like
+and you can post 1,000 times and that's $10 a month.
+So you basically connect it up with API,
+once you press approve it
+then just send it out automatically to any of your socials.
+So that would be full process for your clipping account.
+And you can automate it as many times as you want
+across different accounts.
+And it's a relatively simple build.
+You can have it done in a couple of hours and then test it.

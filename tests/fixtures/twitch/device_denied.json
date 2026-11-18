@@ -1,0 +1,10 @@
+{
+  "source": "https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#device-code-grant-flow",
+  "recordedAt": "2026-11-16",
+  "note": "from docs: denied/expired bodies are not documented; shape assumed from the pending reply",
+  "status": 400,
+  "response": {
+    "status": 400,
+    "message": "access_denied"
+  }
+}

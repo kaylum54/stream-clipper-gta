@@ -1,0 +1,9 @@
+{
+  "source": "https://docs.kick.com/apis/channels",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (401 listed, body not documented)",
+  "status": 401,
+  "response": {
+    "message": "Unauthorized"
+  }
+}

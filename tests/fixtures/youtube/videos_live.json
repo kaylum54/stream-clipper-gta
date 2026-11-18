@@ -1,0 +1,25 @@
+{
+  "source": "https://developers.google.com/youtube/v3/docs/videos/list",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "kind": "youtube#videoListResponse",
+    "etag": "e1",
+    "pageInfo": {
+      "totalResults": 1,
+      "resultsPerPage": 1
+    },
+    "items": [
+      {
+        "kind": "youtube#video",
+        "id": "VID123",
+        "liveStreamingDetails": {
+          "actualStartTime": "2026-11-16T10:00:00Z",
+          "concurrentViewers": "100",
+          "activeLiveChatId": "CHAT_ID_1"
+        }
+      }
+    ]
+  }
+}

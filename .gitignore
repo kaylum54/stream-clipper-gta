@@ -1,0 +1,11 @@
+.venv/
+data/
+__pycache__/
+.pytest_cache/
+*.pyc
+test-results/
+data-demo/
+data-rehearsal/
+data-rehearsal-2/
+data-rehearsal-3/
+.coverage

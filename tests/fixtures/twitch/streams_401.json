@@ -1,0 +1,11 @@
+{
+  "source": "https://dev.twitch.tv/docs/api/reference/#get-streams",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (401 conditions; body shape per Twitch error convention)",
+  "status": 401,
+  "response": {
+    "error": "Unauthorized",
+    "status": 401,
+    "message": "Invalid OAuth token"
+  }
+}

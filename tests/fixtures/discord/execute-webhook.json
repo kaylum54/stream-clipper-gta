@@ -1,0 +1,12 @@
+{
+  "source": "https://docs.discord.com/developers/resources/webhook and /developers/reference (moved from discord.com/developers/docs)",
+  "recordedAt": "2026-11-16",
+  "endpoint": "POST /webhooks/{webhook.id}/{webhook.token}",
+  "query": {"wait": "boolean, default false", "thread_id": "snowflake"},
+  "content_max_chars": 2000,
+  "json_fields": ["content", "allowed_mentions", "embeds", "username", "avatar_url", "tts", "flags", "attachments", "poll"],
+  "multipart": {"file_field_pattern": "files[n]", "json_field": "payload_json"},
+  "attachment_limit_mib": 20,
+  "attachment_limit_note": "default limit is 20 MiB for all users, per file; higher with Nitro or Boost",
+  "rate_limit_429": {"fields": ["message", "retry_after", "global"], "verified": false}
+}

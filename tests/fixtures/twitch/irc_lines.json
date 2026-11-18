@@ -1,0 +1,16 @@
+{
+  "source": "https://dev.twitch.tv/docs/chat/irc/",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "lines": [
+      "@badge-info=;badges=broadcaster/1;color=#0000FF;display-name=abc;emotes=;id=eb24e920-8065-492a-8aea-266a00fc5126;mod=0;room-id=713936733;subscriber=0;tmi-sent-ts=1507246572675;turbo=0;user-id=713936733;user-type= :abc!abc@abc.tmi.twitch.tv PRIVMSG #xyz :HeyGuys",
+      ":abc!abc@abc.tmi.twitch.tv PRIVMSG #xyz :KEKW KEKW that was insane",
+      "PING :tmi.twitch.tv",
+      ":tmi.twitch.tv NOTICE * :Login authentication failed",
+      ":abc!abc@abc.tmi.twitch.tv JOIN #xyz",
+      ":tmi.twitch.tv 001 abc :Welcome, GLHF!"
+    ]
+  }
+}

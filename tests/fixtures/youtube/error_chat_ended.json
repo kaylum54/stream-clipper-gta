@@ -1,0 +1,18 @@
+{
+  "source": "https://developers.google.com/youtube/v3/live/docs/liveChatMessages/list",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 403,
+  "response": {
+    "error": {
+      "code": 403,
+      "message": "The specified live chat is no longer live.",
+      "errors": [
+        {
+          "domain": "youtube.liveChatMessage",
+          "reason": "liveChatEnded"
+        }
+      ]
+    }
+  }
+}

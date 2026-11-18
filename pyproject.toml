@@ -1,0 +1,23 @@
+[project]
+name = "stream-clipper"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["unit_*.py", "int_*.py", "contract_*.py", "review_*.py"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+markers = ["slow: real ffmpeg/whisper work"]
+
+[tool.ruff]
+line-length = 160
+extend-exclude = ["data*", ".venv"]
+
+[tool.ruff.lint]
+select = ["F", "E9", "B"]
+ignore = ["B904"]  # HTTPException inside except is intended; chaining adds nothing for the user
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B007", "B905"]
+"stress/*" = ["F841", "B905"]

@@ -1,0 +1,15 @@
+{
+  "source": "https://dev.twitch.tv/docs/authentication/validate-tokens/",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "client_id": "wbmytr93xzw8zbg0p1izqyzzc5mbiz",
+    "login": "twitchdev",
+    "scopes": [
+      "chat:read"
+    ],
+    "user_id": "141981764",
+    "expires_in": 5520838
+  }
+}

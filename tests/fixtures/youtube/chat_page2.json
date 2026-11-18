@@ -1,0 +1,35 @@
+{
+  "source": "https://developers.google.com/youtube/v3/live/docs/liveChatMessages/list",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "kind": "youtube#liveChatMessageListResponse",
+    "nextPageToken": "TOKEN3",
+    "pollingIntervalMillis": 5000,
+    "pageInfo": {
+      "totalResults": 2,
+      "resultsPerPage": 2
+    },
+    "items": [
+      {
+        "kind": "youtube#liveChatMessage",
+        "id": "msg-3",
+        "snippet": {
+          "type": "textMessageEvent",
+          "publishedAt": "2026-11-16T12:00:05.000Z",
+          "displayMessage": "KEKW so good"
+        }
+      },
+      {
+        "kind": "youtube#liveChatMessage",
+        "id": "msg-4",
+        "snippet": {
+          "type": "textMessageEvent",
+          "publishedAt": "2026-11-16T12:00:08.000Z",
+          "displayMessage": "clip it \ud83d\ude02"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "source": "https://dev.twitch.tv/docs/api/reference/#get-streams",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "data": [
+      {
+        "id": "40952121085",
+        "user_id": "101051819",
+        "user_login": "afro",
+        "user_name": "Afro",
+        "game_id": "32982",
+        "game_name": "Grand Theft Auto V",
+        "type": "live",
+        "title": "Hey Guys, It's Me Dave",
+        "tags": [
+          "English"
+        ],
+        "viewer_count": 1490,
+        "started_at": "2021-03-10T03:18:11Z",
+        "language": "en",
+        "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_afro-{width}x{height}.jpg",
+        "tag_ids": [],
+        "is_mature": false
+      },
+      {
+        "id": "40952121099",
+        "user_id": "101051820",
+        "user_login": "gaules",
+        "user_name": "Gaules",
+        "game_id": "32399",
+        "game_name": "Counter-Strike",
+        "type": "live",
+        "title": "CS ao vivo \ud83d\udd25",
+        "tags": null,
+        "viewer_count": 78000,
+        "started_at": "2021-03-10T03:00:00Z",
+        "language": "pt",
+        "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_gaules-{width}x{height}.jpg",
+        "tag_ids": [],
+        "is_mature": false
+      }
+    ],
+    "pagination": {
+      "cursor": "eyJiIjp7IkN1cnNvciI6ImV5SnpJam8zT0RNMk5TNDBORFF4TlRjMU1UY3hOU3dpWkNJNlptRnNjMlVzSW5RaU9uUnlkV1Y5In0sImEiOnsiQ3Vyc29yIjoiZXlKeklqb3hOVGs0TkM0MU56RXhNekExT0RZNU9ERXNJbVFpT21aaGJITmxMQ0owSWpwMGNuVmxmUT09In19"
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Stream Clipper</title>
+<script>try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- non-blocking: offline, the page renders straight away in the system fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e0f11'/%3E%3Cpath d='M10 8H7v16h3M22 8h3v16h-3' stroke='%23ecebe8' stroke-width='2.4' fill='none'/%3E%3Cpath d='M16 6v20' stroke='%23ff5b4a' stroke-width='2.4'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="#review" aria-label="Stream Clipper, review queue">
+    <svg class="mark" id="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <path class="mark-in" d="M11 7H7v18h4" />
+      <path class="mark-out" d="M21 7h4v18h-4" />
+      <path class="mark-head" d="M16 4v24" />
+    </svg>
+    <span class="brand-name">Stream Clipper</span>
+  </a>
+  <nav class="tabs" aria-label="Sections">
+    <a href="#review" data-tab="review">Review <span class="count" id="count-pending"></span></a>
+    <a href="#streamers" data-tab="streamers">Streamers</a>
+    <a href="#posted" data-tab="posted">Posted</a>
+    <a href="#activity" data-tab="activity">Activity</a>
+    <a href="#settings" data-tab="settings">Settings</a>
+  </nav>
+  <p class="pulse" id="pulse"></p>
+  <a class="setup-link" id="setup-link" href="#setup" hidden></a>
+  <button class="theme" id="theme" type="button" aria-label="Switch theme">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 3a7 7 0 0 1 0 14z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<main id="main" tabindex="-1">
+  <section id="view-setup" class="view" aria-labelledby="setup-title" hidden>
+    <div class="page narrow">
+      <h1 id="setup-title">Set up Stream Clipper</h1>
+      <p class="lede">Five steps, two of them optional. Once a streamer you added goes live, clips start arriving in Review by themselves.</p>
+      <div class="progress" id="setup-progress"></div>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+
+  <section id="view-review" class="view" aria-label="Review" hidden>
+    <h1 class="sr-only">Review clips</h1>
+    <div class="review">
+      <aside class="queue" aria-label="Clips waiting for review">
+        <p class="queue-head" id="queue-count"></p>
+        <ol id="queue"></ol>
+        <p class="queue-foot" id="queue-foot" hidden></p>
+      </aside>
+      <div class="stage" id="stage"></div>
+      <div class="panel" id="panel" hidden></div>
+    </div>
+  </section>
+
+  <section id="view-streamers" class="view" aria-labelledby="streamers-title" hidden>
+    <div class="page">
+      <div class="page-head">
+        <h1 id="streamers-title">Streamers</h1>
+        <p class="meta" id="check-line"></p>
+        <button class="btn quiet" id="check-now" type="button">Check now</button>
+      </div>
+      <form class="add" id="add-form" autocomplete="off" novalidate>
+        <label for="add-url">Add a streamer</label>
+        <div class="add-row">
+          <input id="add-url" type="text" inputmode="url" spellcheck="false" autocapitalize="off" placeholder="Paste a Twitch, Kick or YouTube channel link" aria-describedby="add-help add-msg">
+          <button class="btn primary" type="submit">Add</button>
+        </div>
+        <p class="msg" id="add-msg" role="status" hidden></p>
+        <p class="help" id="add-help">Like twitch.tv/name, kick.com/name or youtube.com/@handle. Checked every <span id="poll-every">2 min</span>; recording starts the moment they go live.</p>
+      </form>
+      <p class="disk" id="disk-line" hidden></p>
+      <div class="list-tools" id="streamer-tools" hidden>
+        <label class="sr-only" for="streamer-filter">Find a streamer</label>
+        <input id="streamer-filter" type="search" placeholder="Find a streamer" spellcheck="false" autocomplete="off">
+        <p class="meta" id="streamer-shown"></p>
+      </div>
+      <div class="table" role="table" aria-label="Tracked streamers">
+        <div class="thead" role="row" id="streamers-head" hidden>
+          <span role="columnheader">Streamer</span><span role="columnheader">Status</span><span role="columnheader">Now</span><span role="columnheader">Clips</span><span role="columnheader"><span class="sr-only">Actions</span></span>
+        </div>
+        <div id="streamer-list" role="rowgroup"></div>
+      </div>
+      <p class="empty-line" id="streamers-empty" hidden>No streamers yet. Paste a channel link above and Stream Clipper starts watching them.</p>
+      <button class="btn quiet more" id="streamers-more" type="button" hidden></button>
+    </div>
+  </section>
+
+  <section id="view-posted" class="view" aria-labelledby="posted-title" hidden>
+    <div class="page">
+      <div class="page-head">
+        <h1 id="posted-title">Posted</h1>
+        <div class="tabs-inline" role="tablist" aria-label="Show">
+          <button type="button" role="tab" id="tab-done" data-filter="done" aria-selected="true" aria-controls="posted-list">Approved <span class="num" id="n-done"></span></button>
+          <button type="button" role="tab" id="tab-rejected" data-filter="rejected" aria-selected="false" aria-controls="posted-list" tabindex="-1">Rejected <span class="num" id="n-rejected"></span></button>
+        </div>
+        <p class="meta" id="posted-meta"></p>
+      </div>
+      <div id="posted-list" role="tabpanel" aria-labelledby="tab-done"></div>
+      <p class="empty-line" id="posted-empty" hidden></p>
+    </div>
+  </section>
+
+  <section id="view-activity" class="view" aria-labelledby="activity-title" hidden>
+    <div class="page">
+      <div class="page-head">
+        <h1 id="activity-title">Activity</h1>
+        <p class="meta" id="activity-meta"></p>
+      </div>
+      <ol class="log" id="log"></ol>
+      <p class="empty-line" id="log-empty" hidden>Nothing has happened yet. Streamers you add, recordings, clips and posts show up here as they happen.</p>
+    </div>
+  </section>
+
+  <section id="view-settings" class="view" aria-labelledby="settings-title" hidden>
+    <form class="page settings" id="settings-form" autocomplete="off" novalidate></form>
+  </section>
+</main>
+
+<dialog id="keys" aria-labelledby="keys-title">
+  <h2 id="keys-title">Keyboard shortcuts</h2>
+  <p class="help">They work on the Review page whenever you aren't typing.</p>
+  <dl class="keylist">
+    <dt><kbd>A</kbd></dt><dd>Approve and post the clip</dd>
+    <dt><kbd>R</kbd></dt><dd>Reject the clip</dd>
+    <dt><kbd>J</kbd></dt><dd>Next clip</dd>
+    <dt><kbd>K</kbd></dt><dd>Previous clip</dd>
+    <dt><kbd>Space</kbd></dt><dd>Play or pause</dd>
+    <dt><kbd>&larr;</kbd> <kbd>&rarr;</kbd></dt><dd>Jump 1 s on the timeline under the video (when it has focus)</dd>
+    <dt><kbd>?</kbd></dt><dd>Show this list</dd>
+  </dl>
+  <form method="dialog"><button class="btn primary" type="submit">Close</button></form>
+</dialog>
+
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

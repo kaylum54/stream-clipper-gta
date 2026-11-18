@@ -1,0 +1,15 @@
+{
+  "source": "https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#device-code-grant-flow",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "access_token": "fake-access-token",
+    "expires_in": 14124,
+    "refresh_token": "fake-refresh-token",
+    "scope": [
+      "chat:read"
+    ],
+    "token_type": "bearer"
+  }
+}

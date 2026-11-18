@@ -1,0 +1,18 @@
+{
+  "source": "https://developers.google.com/youtube/v3/docs/core_errors",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 503,
+  "response": {
+    "error": {
+      "code": 503,
+      "message": "Backend Error",
+      "errors": [
+        {
+          "domain": "global",
+          "reason": "backendError"
+        }
+      ]
+    }
+  }
+}

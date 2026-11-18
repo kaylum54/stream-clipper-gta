@@ -1,0 +1,10 @@
+{
+  "source": "https://docs.kick.com/apis/channels",
+  "recordedAt": "2026-11-16",
+  "note": "from docs (schema only)",
+  "status": 200,
+  "response": {
+    "message": "OK",
+    "data": []
+  }
+}

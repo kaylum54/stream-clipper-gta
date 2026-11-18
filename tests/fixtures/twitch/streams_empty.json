@@ -1,0 +1,10 @@
+{
+  "source": "https://dev.twitch.tv/docs/api/reference/#get-streams",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 200,
+  "response": {
+    "data": [],
+    "pagination": {}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "source": "https://dev.twitch.tv/docs/authentication/validate-tokens/",
+  "recordedAt": "2026-11-16",
+  "note": "from docs",
+  "status": 401,
+  "response": {
+    "status": 401,
+    "message": "invalid access token"
+  }
+}
